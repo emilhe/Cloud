@@ -1,0 +1,20 @@
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0//EN"
+        "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to="ShoppingList">
+
+    <!-- Inherit the core Web Toolkit stuff.                  -->
+    <inherits name='com.google.gwt.user.User'/>
+
+    <!-- Specify the app entry point class.                   -->
+    <entry-point class='com.shoppingList.client.ShoppingList'/>
+
+    <!-- Manually entered source paths -->
+    <source path='client'/>
+    <source path='shared'/>
+    <inherits name="com.google.gwt.logging.Logging"/>
+
+
+    <!-- Specify the app servlets.                   -->
+    <servlet path='/ShoppingListService' class='com.shoppingList.server.ShoppingListServiceImpl'/>
+
+</module>
