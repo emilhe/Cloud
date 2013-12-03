@@ -49,6 +49,7 @@ public class ShoppingList implements EntryPoint {
                 String result = (String) object;
                 if(result.equals("LOGGED_IN")) {
                     // Logged in; proceed go GUI.
+                    logger.log(Level.INFO, "Login success.");
                     setupGUI();
                     loadItems();
                 }
@@ -67,11 +68,12 @@ public class ShoppingList implements EntryPoint {
 
             @Override
             public void onFailure(Throwable caught) {
-                logger.log(Level.INFO, "No items were loaded.");
+                logger.log(Level.INFO, "Unable to load any items.");
             }
 
             @Override
             public void onSuccess(ArrayList<ShopItem> result) {
+                logger.log(Level.INFO, "Load success.");
                 if(result == null) return;
                 // A match was found; load it.
                 shoppingItemList = result;
